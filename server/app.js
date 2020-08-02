@@ -5,7 +5,10 @@ const mongoose = require('mongoose');
 
 const app = express();
 
-mongoose.connect('mongodb+srv://souvik:<password>@souviksmlab.37epg.mongodb.net/<dbname>?retryWrites=true&w=majority',{useNewUrlParser:true})
+mongoose.connect('mongodb://127.0.0.1:27017/books',{
+    useNewUrlParser:true,
+    useUnifiedTopology: true
+})
 mongoose.connection.once('open',()=>{
     console.log('connected to databse');
 })
